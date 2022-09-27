@@ -1,3 +1,8 @@
+@extends('patel-restaurents.layout')
+@section('title-name')
+Todays specials Food
+@endsection
+@section('content')
 <!-- ======= Specials Section ======= -->
 <section id="specials" class="specials">
   <div class="container" data-aos="fade-up">
@@ -96,3 +101,4 @@
   </div>
 </section><!-- End Specials Section -->
 
+@endsection

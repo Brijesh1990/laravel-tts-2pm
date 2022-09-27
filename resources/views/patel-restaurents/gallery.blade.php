@@ -1,5 +1,10 @@
+@extends('patel-restaurents.layout')
+@section('title-name')
+Our gallery
+@endsection
+@section('content')
 <!-- ======= Gallery Section ======= -->
-<section id="gallery" class="gallery">
+<section id="gallery" class="gallery" style="margin-top:10%">
 
   <div class="container" data-aos="fade-up">
     <div class="section-title">
@@ -80,3 +85,4 @@
 
   </div>
 </section><!-- End Gallery Section -->
+@endsection

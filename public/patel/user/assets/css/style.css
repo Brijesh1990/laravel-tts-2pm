@@ -1,13 +1,4 @@
-/**
-* Template Name: Restaurantly - v3.9.0
-* Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   background: #0c0b09;
@@ -1259,7 +1250,7 @@ section {
   padding: 10px 12px;
 }
 
-.book-a-table .php-email-form button[type=submit] {
+.book-a-table .php-email-form button[type=submit],button[type=reset] {
   background: #cda45e;
   border: 0;
   padding: 10px 35px;

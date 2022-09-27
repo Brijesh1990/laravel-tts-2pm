@@ -1,6 +1,10 @@
-
+@extends('patel-restaurents.layout')
+@section('title-name')
+Our booking
+@endsection
+@section('content')
     <!-- ======= Book A Table Section ======= -->
-    <section id="book-a-table" class="book-a-table">
+    <section id="book-a-table" class="book-a-table" style="margin-top:10%">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -49,3 +53,4 @@
 
       </div>
     </section><!-- End Book A Table Section -->
+@endsection

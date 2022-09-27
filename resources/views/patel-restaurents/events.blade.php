@@ -1,5 +1,10 @@
+@extends('patel-restaurents.layout')
+@section('title-name')
+Events
+@endsection
+@section('content')
 <!-- ======= Events Section ======= -->
-<section id="events" class="events">
+<section id="events" class="events mt-5" style="margin-top:10%;">
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
@@ -97,3 +102,4 @@
 
   </div>
 </section><!-- End Events Section -->
+@endsection

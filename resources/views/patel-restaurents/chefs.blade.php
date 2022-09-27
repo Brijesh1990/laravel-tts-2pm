@@ -1,5 +1,10 @@
+@extends('patel-restaurents.layout')
+@section('title-name')
+Our chefs
+@endsection
+@section('content')
 <!-- ======= Chefs Section ======= -->
-<section id="chefs" class="chefs">
+<section id="chefs" class="chefs" style="margin-top:10%">
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
@@ -67,3 +72,4 @@
 
   </div>
 </section><!-- End Chefs Section -->
+@endsection
