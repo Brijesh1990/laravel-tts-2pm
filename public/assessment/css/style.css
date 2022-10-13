@@ -1,0 +1,34 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.navbar-link li
+{
+display: inline-block !important;
+font-size: 17px !important;
+padding: 5px 15px;
+}
+.navbar-link a 
+{
+    color:black !important;
+    list-style-type: none;
+    text-decoration: none;  
+}
+.sidebar-link li
+{
+display: block !important;
+font-size: 17px !important;
+padding: 5px 15px;
+}
+.sidebar-link a 
+{
+    color:white !important;
+    list-style-type: none;
+    text-decoration: none;  
+}
+.gallery 
+{
+    font-size: 32px;
+}
