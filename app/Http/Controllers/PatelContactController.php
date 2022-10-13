@@ -33,7 +33,27 @@ class PatelContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validations
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required',
+            'subject'=>'required',
+            'message'=>'required',
+        ]);
+        
+        date_default_timezone_set("Asia/Calcutta");
+        $data=array(
+             
+            "text_name"=>$request->name,
+            "text_email"=>$request->email,
+            "text_phone"=>$request->phone,
+            "text_subject"=>$request->subject,
+            "text_comment"=>$request->message,
+        );
+        //  elequent query builder
+        PatelContact::create($data);
+        return redirect('/contact')->with('success','Thank for contact us we will contact with you soon!');
     }
 
     /**

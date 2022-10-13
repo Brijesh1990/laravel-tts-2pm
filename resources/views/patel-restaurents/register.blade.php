@@ -62,8 +62,12 @@ contact with us
 </ul>
 </div>
 @endif    
-
-            <form  method="post" role="form" class="php-email-form">
+@if(Session('success'))
+<div class='alert alert-success'>
+  <span class="text-danger">{{ Session('success') }} </span>
+ </div>
+ @endif
+            <form  method="post" role="form" class="php-email-form" enctype="mutipart/form-data">
              @csrf 
             <div class="row">
                 <div class="col-md-6 form-group">
@@ -73,14 +77,62 @@ contact with us
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
                 </div>
               </div>
+              <div class="row">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="password" class="form-control" name="password" id="email" placeholder="Your Password">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="password" class="form-control" name="confirm_password" id="email" placeholder="Your Password">
+                </div>
+</div>
+
+              <div class="col-md-12 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="mobile" id="email" placeholder="Your Mobile">
+                </div>
+
+                <div class="col-md-12 form-group mt-3 mt-md-0">
+                  <input type="file" class="form-control" name="photo" id="email" placeholder="Your Photo">
+                </div>
+
+                
+                <div class="col-md-12 form-group mt-3 mt-md-0">
+                  Reading <input type="checkbox"   name="chk[]" id="email" value="reading">
+                  Playing <input type="checkbox"   name="chk[]" id="email" value="playing">
+                </div>
+                <div class="col-md-12 form-group mt-3 mt-md-0">
+                  Male <input type="radio"   name="gender" id="email" value="male">
+                  Female <input type="radio"   name="gender" id="email" value="female">
+                </div>
+
+            
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
+                <textarea class="form-control" name="address" rows="8" placeholder="Message"></textarea>
               </div>
             
-              <div><button type="submit">Register</button>
+              <div class="form-group mt-3">
+                <select  class="form-control" name="country" id="subject" placeholder="Subject">
+                <option value="">-select country-</option>
+                  <option value="1">India</option>
+                                    
+                </select>
+              </div>
+              <div class="form-group mt-3">
+                <select  class="form-control" name="state" id="subject" placeholder="Subject">
+                  
+                <option value="">-select state-</option>
+                  <option value="1">Gujrat</option>
+                                    
+                </select>
+              </div>
+              <div class="form-group mt-3">
+                <select  class="form-control" name="city" id="subject" placeholder="Subject">
+                  
+                <option value="">-select city-</option>
+                  <option value="1">Rajkot</option>
+                                    
+                </select>
+              </div>
+              <div><button type="submit" name="reg">Register</button>
               <button type="reset">Reset</button>
             </div>
 

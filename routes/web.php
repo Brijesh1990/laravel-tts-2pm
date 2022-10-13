@@ -56,6 +56,7 @@ Route::get('/our-chefs',[PatelChefsController::class,'index']);
 Route::get('/our-food-gallery',[PatelGalleryController::class,'index']);
 // contact
 Route::get('/contact',[PatelContactController::class,'index']);
+Route::post('/contact',[PatelContactController::class,'store']);
 // Booking
 Route::get('/our-booking',[PatelBookingController::class,'index']);
 // Register
@@ -64,6 +65,7 @@ Route::post('/create-account',[RegisterController::class,'store']);
 // Login
 Route::get('/authentication-login',[LoginController::class,'index']);
 Route::post('/authentication-login',[LoginController::class,'store']);
+
 // admin Ui routing load here
 Route::get('/admin-login',[AdminLoginController::class,'index']);
 Route::post('/admin-login',[AdminLoginController::class,'store']);

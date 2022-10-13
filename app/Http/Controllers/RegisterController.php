@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Register;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -37,9 +37,37 @@ class RegisterController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|email',
-            'subject'=>'required',
-            'message'=>'required',
-        ]);
+            'password'=>'required',
+            'confirm_password'=>'required',
+            'mobile'=>'required',
+            'photo'=>'required',
+            'chk'=>'required',
+            'gender'=>'required',
+            'address'=>'required',
+            'country'=>'required',
+            'state'=>'required',
+            'city'=>'required',
+            ]);
+            date_default_timezone_set("Asia/Calcutta");
+            $data=array(
+                "text_name"=>$request->name,
+                "text_email"=>$request->email,
+                "text_password"=>$request->password,
+                "text_mobile"=>$request->mobile,
+                "text_photo"=>$request->photo,
+                "text_hobby"=>implode(",",$request->chk),
+                "text_gender"=>$request->gender,
+                "text_address"=>$request->address,
+                "cid"=>$request->country,
+                "sid"=>$request->state,
+                "ctid"=>$request->city,
+                
+            );
+
+
+            User::create($data);
+            //dd($data);
+            return redirect('/create-account')->with('success','Thanks for creating your account with us!');
     }
 
     /**
