@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\AddGalleryController;
-
+use App\http\Controllers\AddBlogsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +23,19 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 // perform cruid opeations routing 
+Route::get('/addgallery',[AddGalleryController::class,'index']);
+Route::get('/managegallery',[AddGalleryController::class,'index']);
+// add blogs
+Route::get('/addblogs',[AddBlogsController::class,'index']);
+Route::post('/addblogs',[AddBlogsController::class,'store']);
+Route::get('/manageblogs',[AddBlogsController::class,'show']);
+Route::get('/manageblogs/{id}',[AddBlogsController::class,'destroy']);
+Route::get('/manageblogs',[AddBlogsController::class,'show']);
+
+Route::get('/addgallery',[AddGalleryController::class,'index']);
+Route::get('/addgallery',[AddGalleryController::class,'index']);
+Route::get('/addgallery',[AddGalleryController::class,'index']);
+Route::get('/addgallery',[AddGalleryController::class,'index']);
+Route::get('/addgallery',[AddGalleryController::class,'index']);
 Route::get('/addgallery',[AddGalleryController::class,'index']);
 

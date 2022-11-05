@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
-class AddGalleryController extends Controller
+use App\Models\AddBlogs;
+class AddBlogsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +12,7 @@ class AddGalleryController extends Controller
      */
     public function index()
     {
-        return view('addgallery');  
+        return view('addblogs');
     }
 
     /**
@@ -34,7 +33,22 @@ class AddGalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validations 
+        $request->validate([
+
+            'title'=>'required',
+            'descriptions'=>'required',
+            'addeddate'=>'required',
+        ]);
+        // elequent query builder
+
+        $data=array(
+            "title"=>$request->title,
+            "descriptions"=>$request->descriptions,
+            "addeddate"=>$request->addeddate,
+        );
+        AddBlogs::create($data);
+        return redirect('addblogs')->with('success','Your Blogs successfully Addedd'); 
     }
 
     /**
@@ -45,7 +59,9 @@ class AddGalleryController extends Controller
      */
     public function show()
     {
-       return view('managegallery');
+        // elequent query builder
+        $data=AddBlogs::all();
+        return view('manageblogs',["data"=>$data]);
     }
 
     /**
@@ -79,6 +95,10 @@ class AddGalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete a blogs
+        AddBlogs::where("id",$id)->delete();
+        return redirect('/manageblogs')->with('del','Your blogs deleted succefully');
+        
+
     }
 }
