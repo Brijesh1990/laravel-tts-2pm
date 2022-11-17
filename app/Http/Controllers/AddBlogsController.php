@@ -72,7 +72,10 @@ class AddBlogsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //edit blogs
+         $edblogs=AddBlogs::where("id",$id)->first();
+         return view('/editblogs',['edblogs'=>$edblogs]);
+         
     }
 
     /**
@@ -84,7 +87,16 @@ class AddBlogsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //update blogs
+        $data=array(
+            "title"=>$request->title,
+            "descriptions"=>$request->descriptions,
+            "addeddate"=>$request->addeddate,
+        );
+
+        AddBlogs::where("id",$id)->update($data);
+        return redirect('/manageblogs')->with('upd','Your blogs updated successfully');
+
     }
 
     /**

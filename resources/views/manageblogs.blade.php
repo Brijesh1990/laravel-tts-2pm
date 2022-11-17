@@ -44,6 +44,13 @@ $(document).ready(function () {
            </div>
            @endif
          
+
+           @if(Session('upd'))
+           <div class="alert alert-success">
+            <span class="text-dark">{{session('upd')}}</span>
+           </div>
+           @endif
+           
             <h1 class="text-center gallery">Manage Blogs</h1>
             <hr class="border border-2 border-dark  w-25 mx-auto">
             
@@ -65,7 +72,7 @@ $(document).ready(function () {
                     <td>{{$row->title}}</td>
                     <td>{{$row->descriptions}}</td>
                     <td>{{$row->addeddate}}</td>
-                    <td><a href='{{URL("/manageblogs/".$row->id)}}' onclick="return confirm('Are you sure to delete?')"><i class="bi bi-trash text-danger"></i></a> | <a href=""><i class="bi bi-pencil text-info"></i></a></td>
+                    <td><a href='{{URL("/manageblogs/".$row->id)}}' onclick="return confirm('Are you sure to delete?')"><i class="bi bi-trash text-danger"></i></a> | <a href='{{URL("/editblogs/".$row->id)}}' onclick="return confirm('Are you sure to Edit blogs?')"><i class="bi bi-pencil text-info"></i></a></td>
                 </tr>
                 @endforeach
 </tbody>
