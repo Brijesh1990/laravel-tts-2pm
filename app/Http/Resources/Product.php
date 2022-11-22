@@ -16,8 +16,8 @@ class Product extends JsonResource
                 'id'=>$this->id,
                 'name'=>$this->name,
                 'detail'=>$this->detail,
-                'create_at'=>$this->created_at->formate('d/m/y'),
-                'updated_at'=>$this->updated_at->formate('d/m/y'),
+                'create_at'=>$this->created_at->format('d/m/y'),
+                'updated_at'=>$this->updated_at->format('d/m/y'),
 
         ];
     }

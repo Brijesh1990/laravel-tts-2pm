@@ -19,5 +19,10 @@ use App\http\Resources\Product;
 */
 Route::middleware('auth:api')->group(function() 
 {
-    Route::post('products',[ProductController::class,'index']);
+   
 });
+
+Route::get('products',[ProductController::class,'index']);
+Route::post('products',[ProductController::class,'store']);
+
+

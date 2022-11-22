@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Validator;
 use App\Http\Resources\Product as ProductResource;
-class ProductController extends Controller
+class ProductController extends BaseController
 {
     //display all listing of api
     public function index()
@@ -29,13 +29,7 @@ class ProductController extends Controller
         }
 
         $product=Product::create($input);
-        $input=$request->all();
-        $data=Product::create($input);
-        $success['token']=$data->createToken('token')->accessToken;
-        $success['name']=$data->name;
-        return $this->sendResponse($success,'Products Added  successfully');
-
-        // return $this->sendResponse(new ProductResource($product),'Product created successfully');
+        return $this->sendResponse(new ProductResource($product),'Product created successfully');
 
     }
 }
